@@ -3,17 +3,33 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
+#region testing
 namespace WebApplication1.Models
 {
     public class IndexViewModel
     {
+        /// <summary>
+        /// this is a summary comment
+        /// </summary>
         public bool HasPassword { get; set; }
         public IList<UserLoginInfo> Logins { get; set; }
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
-    }
 
+        /// <summary>
+        ///  stuff happens in here
+        /// </summary>
+        /// <param name="num">integer goes here</param>
+        /// <param name="str">string goes here</param>
+        /// <returns>this is the return value</returns>
+        public bool stuff(int num, string str)
+        {
+            //TODO: make this actually do something
+            return true;   
+        }
+    }
+#endregion testing
     public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
@@ -80,6 +96,7 @@ namespace WebApplication1.Models
 
     public class ConfigureTwoFactorViewModel
     {
+        //TODO: tillfälligt
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
     }
